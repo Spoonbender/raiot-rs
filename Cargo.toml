@@ -1,0 +1,14 @@
+[workspace]
+
+members = [
+    "raiot-buffers"
+    ,"raiot-cli"
+    ,"raiot-test-utils"
+    ,"raiot-protocol"
+    ,"raiot-streams"
+    ,"raiot-client"
+    ,"raiot-demo"
+    ,"raiot-mqtt"
+    ,"raiot-stclient"
+    ,"raiot-client-base"
+]

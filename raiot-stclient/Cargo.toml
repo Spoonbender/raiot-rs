@@ -1,0 +1,36 @@
+[package]
+name = "raiot-stclient"
+version = "0.1.0"
+authors = ["Maayan Hanin <maayan.asa.hanin@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+raiot-protocol = { path = "../raiot-protocol" }
+raiot-mqtt = { path = "../raiot-mqtt" }
+raiot-cli = { path = "../raiot-cli" }
+raiot-client-base = { path = "../raiot-client-base" }
+raiot-streams = { path = "../raiot-streams", features = ["use-native-tls"] }
+native-tls = { version = "0.2" }
+mqtt-protocol = "0.10"
+structopt = "0.2"
+serde_json = "1.0"
+env_logger = "0.7.1"
+uuid = { version = "0.7", features = ["v4"] }
+log = "0.4.8"
+
+[features]
+default = ["standard", "sas", "certificates"]
+
+# IoT Hub functional features
+c2d = ["raiot-protocol/c2d"]
+twin = ["raiot-protocol/twin"]
+direct-methods = ["raiot-protocol/direct-methods"]
+telemetry = ["raiot-protocol/telemetry"]
+basic = ["telemetry"]
+standard = ["telemetry", "twin", "c2d", "direct-methods"]
+
+# Auth Features
+sas = ["raiot-protocol/sas"]
+certificates = ["raiot-protocol/certificates"]

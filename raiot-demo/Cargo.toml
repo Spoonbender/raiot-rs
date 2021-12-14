@@ -1,0 +1,25 @@
+[package]
+name = "raiot-demo"
+version = "0.1.0"
+authors = ["Maayan Hanin <maayan.asa.hanin@gmail.com>"]
+license = "MIT OR Apache-2.0"
+edition = "2018"
+
+[dependencies]
+raiot-protocol = { path = "../raiot-protocol", features = ["twin", "c2d", "direct-methods", "sas", "certificates"] }
+raiot-streams = { path = "../raiot-streams", features = ["use-native-tls"] }
+raiot-client = { path = "../raiot-client" }
+raiot-client-base = { path = "../raiot-client-base" }
+raiot-cli = { path = "../raiot-cli" }
+
+rustls = "0.17.0"
+uuid = { version = "0.7", features = ["v4"] }
+native-tls = { version = "0.2" }
+chrono = "0.4"
+structopt = "0.2"
+log = "0.4.8"
+env_logger = "0.7.1"
+futures = "0.3"
+serde = "1.0"
+serde_json = "1.0"
+tokio = { version = "0.2", features = ["full"] }

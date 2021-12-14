@@ -1,0 +1,12 @@
+[package]
+name = "raiot-cli"
+version = "0.1.0"
+authors = ["Maayan Hanin <maayan.asa.hanin@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+structopt = "0.2"
+raiot-protocol = { path = "../raiot-protocol", features = ["standard", "sas", "certificates"] }
+raiot-client-base = { path = "../raiot-client-base" }
